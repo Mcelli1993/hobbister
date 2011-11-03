@@ -63,8 +63,7 @@ libs/ - Additional libraries
 misc/ - For not-externally exposed php code
 ../data - For persistent data
 deplist.txt - list of pears to install
-.openshift/action_hooks/build - Script that gets run every push, just prior to
-    starting your app
+.openshift/action_hooks/build - Script that gets run every push, just prior to starting your app
 
 
 Notes about layout
