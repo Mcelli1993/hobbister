@@ -1,4 +1,4 @@
-phpBB on OpenShift Express
+phpBB 3.0.9 on OpenShift Express
 ===========================
 
 This git repository helps you get up and running quickly w/ a phpBB installation
