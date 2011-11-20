@@ -36,7 +36,7 @@ Then push the repo upstream
     git push
 
 That's it, you can now checkout your application at:
-    http://phpbb-$yourlogin.rhcloud.com
+    http://phpbb-$yournamespace.rhcloud.com
 
 Default Admin Username: Admin
 Default Password: OpenShiftAdmin
