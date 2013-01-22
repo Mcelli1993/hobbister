@@ -19,7 +19,7 @@ Create a php-5.3 application
 
 Add MySQL support to your application
 
-    rhc app cartridge add -a phpbb -c mysql-5.1
+    rhc cartridge add -a phpbb -c mysql-5.1
 
 Add this upstream phpbb repo
 
