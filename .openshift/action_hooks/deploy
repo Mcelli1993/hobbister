@@ -17,13 +17,13 @@ then
 fi
 
 # Confirm database exists, if not create it
-if ! /usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -e "select * from users;" phpbb > /dev/null 2>&1
+if ! /usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" -e "select * from users;" $OPENSHIFT_APP_NAME > /dev/null 2>&1
 then
     echo
     echo "Database schema not found, importing 'phpbb.sql' schema."
     echo
-    cat "$OPENSHIFT_REPO_DIR/.openshift/action_hooks/phpbb.sql" |sed s/"phpbb-dbvs.rhcloud.com"/"$OPENSHIFT_APP_DNS"/g > "$OPENSHIFT_REPO_DIR/.openshift/action_hooks/phpbb2.sql"
-    /usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" "$OPENSHIFT_APP_NAME" < "$OPENSHIFT_REPO_DIR/.openshift/action_hooks/phpbb2.sql"
+    cat "$OPENSHIFT_REPO_DIR/.openshift/action_hooks/phpbb.sql" |sed -e s/"phpbb-dbvs.rhcloud.com"/"$OPENSHIFT_APP_DNS"/g -e s/\`phpbb\`/\`$OPENSHIFT_APP_NAME\`/ > "$OPENSHIFT_REPO_DIR/.openshift/action_hooks/phpbb2.sql" 
+    /usr/bin/mysql -u "$OPENSHIFT_MYSQL_DB_USERNAME" --password="$OPENSHIFT_MYSQL_DB_PASSWORD" -h "$OPENSHIFT_MYSQL_DB_HOST" --verbose $OPENSHIFT_APP_NAME < "$OPENSHIFT_REPO_DIR/.openshift/action_hooks/phpbb2.sql"
     echo
     echo "done."
     echo "=================================================="
