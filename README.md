@@ -13,13 +13,9 @@ Running on OpenShift
 
 Create an account at http://openshift.redhat.com/
 
-Create a php-5.3 application
+Create a php application
 
-    rhc app create -a phpbb -t php-5.3
-
-Add MySQL support to your application
-
-    rhc cartridge add -a phpbb -c mysql-5.1
+    rhc app create phpbb php-5.3 mysql-5.1
 
 Add this upstream phpbb repo
 
