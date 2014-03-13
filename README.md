@@ -11,7 +11,7 @@ match the application so you might have to update .openshift/action_hooks/build.
 Running on OpenShift
 --------------------
 
-Create an account at http://openshift.redhat.com/
+Create an account at https://www.openshift.com
 
 Create a php application
 
