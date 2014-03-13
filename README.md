@@ -62,7 +62,7 @@ misc/ - For not-externally exposed php code
 
 ../data - For persistent data
 
-deplist.txt - list of pears to install
+.openshift/pear.txt - list of pears to install
 
 .openshift/action_hooks/build - Script that gets run every push, just prior to starting your app
 
@@ -78,7 +78,7 @@ please store long term items (like an sqlite database) in ../data which will
 persist between pushes of your repo.
 
 
-deplist.txt
+pear.txt
 -----------
 
 A list of pears to install, line by line on the server.  This will happen when
