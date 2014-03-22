@@ -39,7 +39,7 @@ class dbal_mysqli extends dbal
 		$this->dbname = $database;
 		$port = (!$port) ? NULL : $port;
 
-		// Persistant connections not supported by the mysqli extension?
+		// Persistent connections not supported by the mysqli extension?
 		$this->db_connect_id = @mysqli_connect($this->server, $this->user, $sqlpassword, $this->dbname, $port);
 
 		if ($this->db_connect_id && $this->dbname != '')
