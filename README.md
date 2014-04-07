@@ -20,7 +20,7 @@ Create a php application
 Add this upstream phpbb repo
 
     cd phpbb
-    git remote add upstream -m master git://github.com/openshift/phpbb-example.git
+    git remote add upstream -m master git://github.com/openshift-quickstart/phpbb-example.git
     git pull -s recursive -X theirs upstream master
 
     # note: if you named your application something other than 'phpbb' make sure to edit
